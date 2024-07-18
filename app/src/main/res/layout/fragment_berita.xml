@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.BeritaFragment"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <!-- CONTENT or FRAGMENT -->
+    <!-- Search Bar -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/searchCv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        app:cardUseCompatPadding="true"
+        android:layout_marginHorizontal="20dp">
+        <!-- Inputan -->
+        <EditText
+            android:id="@+id/searchEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/search"
+            android:hint="Cari Berita"
+            android:background="@color/white"
+            android:padding="15dp"
+            android:drawablePadding="10dp" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Title Kumpulan Berita -->
+    <TextView
+        android:id="@+id/titleTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kumpulan Berita Terkini"
+        android:textStyle="bold"
+        style="@style/TextAppearance.MaterialComponents.Body1"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="20dp"/>
+    <!-- Text Kecil -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Seputar Disabilitas fisik di Denpasar"
+        style="@style/TextAppearance.MaterialComponents.Body2"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="5dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/beritaRv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/row_berita"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"/>
+
+</LinearLayout>

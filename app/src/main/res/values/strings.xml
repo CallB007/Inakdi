@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Inakdi</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="belum_punya_akun_daftar">Belum punya akun ? <b>Daftar</b></string>
+    <string name="sudah_punya_akun_masuk">Sudah punya akun ? <b>Masuk</b></string>
+</resources>

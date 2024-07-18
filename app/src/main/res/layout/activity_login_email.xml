@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.LoginEmailActivity">
+
+    <!-- Header  -->
+    <RelativeLayout
+        android:id="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/m_toolbar_height"
+        android:background="@color/white">
+
+        <!-- Back Button  -->
+        <ImageButton
+            android:id="@+id/toolBarBackBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back"
+            android:background="@android:color/transparent"
+            android:layout_centerVertical="true"
+            android:padding="10dp"/>
+        <!-- Page Title -->
+        <TextView
+            android:id="@+id/toolbarTitleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:text="Masuk"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+
+    <!-- Content or Fragments -->
+    <RelativeLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbarRl"
+        android:layout_marginTop="0dp"
+        android:background="@color/white"
+        android:padding="10dp">
+
+        <!-- Logo  -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profileTv"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/letter_logo_only" />
+        <!-- Text instruction -->
+        <TextView
+            android:id="@+id/loginLabelTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/profileTv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-25dp"
+            android:text="Lanjutkan Masuk sebagai Admin" />
+
+        <!-- Inputan email -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emailTil"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/loginLabelTv"
+            android:layout_marginTop="30dp"
+            android:hint="Masukkan Email"
+            android:paddingHorizontal="20dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp">
+            <!-- Jenis Inputan -->
+            <EditText
+                android:id="@+id/emailEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Inputan Password -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordTil"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/emailTil"
+            android:layout_marginTop="10dp"
+            android:hint="Masukkan Password"
+            android:paddingHorizontal="20dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:passwordToggleEnabled="true">
+            <!-- Jenis Inputan -->
+            <EditText
+                android:id="@+id/passwordEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Text untuk Sign up Account -->
+        <TextView
+            android:id="@+id/noAccountTv"
+            style="@style/TextAppearance.MaterialComponents.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/passwordTil"
+            android:layout_marginTop="15dp"
+            android:paddingHorizontal="25dp"
+            android:text="@string/belum_punya_akun_daftar" />
+
+        <!-- Tombol Login -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/loginBtn"
+            android:layout_width="351dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/noAccountTv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="@color/red600"
+            android:minHeight="@dimen/m_button_height"
+            android:text="Masuk"
+            app:cornerRadius="12dp" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

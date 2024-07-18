@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.TambahBeritaActivity"
+    android:background="@color/white">
+
+    <!-- HEADER -->
+    <RelativeLayout
+        android:id="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/m_toolbar_height"
+        android:background="@color/white">
+        <!-- Back Button  -->
+        <ImageButton
+            android:id="@+id/toolBarBackBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back"
+            android:background="@android:color/transparent"
+            android:layout_centerVertical="true"
+            android:padding="10dp"/>
+        <!-- Page Title -->
+        <TextView
+            android:id="@+id/toolbarTitleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:text="Tambah Berita"
+            android:layout_centerInParent="true" />
+        <!-- Add Image Button  -->
+        <ImageButton
+            android:id="@+id/toolBarAddImageBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/add_gambar"
+            android:layout_alignParentEnd="true"
+            android:background="@android:color/transparent"
+            android:layout_centerVertical="true"
+            android:padding="10dp"/>
+    </RelativeLayout>
+
+
+    <!-- CONTENT or FRAGMENT (Scroll View) -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbarRl"
+        android:layout_above="@id/postBtn"
+        android:padding="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Title Instuction Gambar -->
+            <TextView
+                android:id="@+id/imagesLabelTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gambar yang dimasukkan"
+                android:paddingHorizontal="10dp"
+                style="@style/TextAppearance.MaterialComponents.Body1"/>
+
+            <!-- Output Gambar -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/imagesRv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imagesLabelTv"
+                android:layout_marginTop="10dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="3"
+                tools:listitem="@layout/row_images_picked" />
+
+            <!-- Judul Fasilitas Umum -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/titleTil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_below="@id/imagesRv"
+                android:layout_marginTop="20dp"
+                android:hint="Judul Berita"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp">
+                <!-- Jenis Inputan -->
+                <EditText
+                    android:id="@+id/titleEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName|textCapSentences"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Deskripsi Berita -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/descTil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_below="@id/titleTil"
+                android:layout_marginTop="10dp"
+                android:hint="Deskripsi Berita"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp">
+                <!-- Jenis Inputan -->
+                <EditText
+                    android:id="@+id/descEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:minHeight="150dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- TOMBOL UPLOAD -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/postBtn"
+        android:layout_width="351dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@color/red600"
+        android:minHeight="@dimen/m_button_height"
+        android:text="Unggah Berita"
+        app:cornerRadius="12dp" />
+
+</RelativeLayout>

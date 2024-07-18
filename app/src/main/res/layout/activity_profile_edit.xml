@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.ProfileEditActivity"
+    android:background="@color/white">
+
+    <!-- HEADER -->
+    <RelativeLayout
+        android:id="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/m_toolbar_height">
+        <!-- Button Back -->
+        <ImageButton
+            android:id="@+id/toolbarBackBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:padding="10dp"/>
+        <!-- Section Title -->
+        <TextView
+            android:id="@+id/toolbarTitleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:text="Ubah Data Akun"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <!-- CONTENT or FRAGMENT -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <!-- Show Image Profile-->
+            <RelativeLayout
+                android:id="@+id/profileRl"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerHorizontal="true">
+                <!-- Icon default image-->
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/profileTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/white700"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/profile"
+                    app:shapeAppearanceOverlay="@style/ImageStyle_Circle"/>
+                <!-- Floating button icon add image -->
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/profileImagePickFab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    app:fabSize="mini"
+                    android:src="@drawable/edit"/>
+            </RelativeLayout>
+
+            <!-- Input Text Nama -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nameTil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_below="@id/profileRl"
+                android:hint="Nama"
+                android:layout_marginTop="30dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                android:paddingHorizontal="20dp">
+                <!-- Jenis Inputan -->
+                <EditText
+                    android:id="@+id/nameEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Input Text Email-->
+            <!-- Note email -->
+            <TextView
+                android:id="@+id/emailNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nameTil"
+                android:text="Email yang sudah didaftarkan tidak dapat diganti !."
+                android:paddingHorizontal="20dp"
+                android:layout_marginTop="10dp"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/emailTil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_below="@id/emailNote"
+                android:hint="Email"
+                android:layout_marginTop="10dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                android:paddingHorizontal="20dp">
+                <!-- Jenis Inputan -->
+                <EditText
+                    android:id="@+id/emailEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:enabled="false"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Input Nomor Handphone -->
+            <RelativeLayout
+                android:id="@+id/phoneInputRl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/emailTil"
+                android:paddingHorizontal="20dp">
+                <!-- Phone Number Picker -->
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/countryCodePicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:minWidth="60dp"
+                    android:minHeight="56dp"
+                    android:gravity="center"
+                    app:ccp_autoDetectCountry="false"
+                    app:ccp_rememberLastSelection="true"
+                    app:ccp_showNameCode="false"
+                    app:ccp_showFlag="false"
+                    app:ccp_defaultNameCode="ID"/>
+                <!-- Input Nomor Handphone -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/phoneNumberTil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/countryCodePicker"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:hint="Nomor Telefon"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    android:layout_marginTop="10dp">
+                    <!-- Jenis Inputan -->
+                    <EditText
+                        android:id="@+id/phoneNumberEt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"/>
+                </com.google.android.material.textfield.TextInputLayout>
+            </RelativeLayout>
+
+            <!-- Button Simpan -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/updateBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/phoneInputRl"
+                android:text="Simpan"
+                app:cornerRadius="12dp"
+                android:layout_marginTop="30dp"
+                android:minHeight="@dimen/m_button_height"
+                android:layout_marginHorizontal="20dp"
+                android:backgroundTint="@color/red600"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+</LinearLayout>

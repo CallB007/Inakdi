@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="12dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:id="@+id/fasilitasCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <!-- Gambar Fasilitas-->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageIv"
+            style="@style/ImageStyle_Corners_Rounded"
+            android:layout_width="120dp"
+            android:layout_height="140dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/white700"
+            android:scaleType="centerCrop"
+            android:src="@drawable/gambar" />
+
+        <!-- Judul Fasilitas -->
+        <TextView
+            android:id="@+id/titleTv"
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_toEndOf="@id/imageIv"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Nama Fasilitas Umum yang ada di Bali" />
+
+        <!-- Deskripsi Fasilitas -->
+        <TextView
+            android:id="@+id/descriptionTv"
+            style="@style/TextAppearance.MaterialComponents.Body2"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titleTv"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/imageIv"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipmsum" />
+
+        <!-- Icon Kategori Ramah -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/categoryBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_below="@id/titleTv"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
+            android:layout_toEndOf="@id/descriptionTv"
+            android:background="@android:color/transparent"
+            android:src="@drawable/gambar"
+            app:shapeAppearanceOverlay="@style/ImageStyle_Corners_Rounded" />
+
+        <!-- Tanggal upload -->
+        <TextView
+            android:id="@+id/dateTv"
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/descriptionTv"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"
+            android:layout_toEndOf="@id/imageIv"
+            android:text="dd/MM/yyyy"
+            android:textSize="12sp" />
+
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>

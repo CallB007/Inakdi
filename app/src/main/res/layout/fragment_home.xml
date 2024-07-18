@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.HomeFragment"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <!-- CONTENT or FRAGMENT -->
+    <!-- Search Bar -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/searchCv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        app:cardUseCompatPadding="true"
+        android:layout_marginHorizontal="20dp">
+        <!-- Inputan -->
+        <EditText
+            android:id="@+id/searchEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/search"
+            android:hint="Cari Fasilitas umum"
+            android:background="@color/white"
+            android:padding="15dp"
+            android:drawablePadding="10dp" />
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <!-- KATEGORI -->
+    <!-- Judul Kategori -->
+    <TextView
+        android:id="@+id/categoriesTitleTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kategori Tingkat Keramahan"
+        style="@style/TextAppearance.MaterialComponents.Overline"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="25dp"/>
+
+    <!-- Kategori -->
+    <RelativeLayout
+        android:id="@+id/allCategories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="25dp">
+    <!-- Kategori Semuanya -->
+    <LinearLayout
+        android:id="@+id/allIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="10dp">
+        <!-- Icon -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/allIconIv"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/yellow600"
+            app:shapeAppearanceOverlay="@style/ImageStyle_Corners_Rounded"
+            android:src="@drawable/allcategory"/>
+        <!-- Text -->
+        <TextView
+            android:id="@+id/categoryTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Semuanya"
+            android:textAlignment="center"
+            android:textSize="10sp"
+            android:layout_marginTop="5dp"/>
+    </LinearLayout>
+
+    <!-- Kategori Pilihan -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/categoriesRv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="horizontal"
+        tools:listitem="@layout/row_category"
+        android:layout_toEndOf="@id/allIcon"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"/>
+    </RelativeLayout>
+
+    <!-- Judul Fasilitas Umum -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fasilitas Umum"
+        android:textStyle="bold"
+        style="@style/TextAppearance.MaterialComponents.Body1"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="20dp"/>
+
+    <!-- Fasilitas Umum -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fasilitasRv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/row_fasilitas"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"/>
+
+</LinearLayout>

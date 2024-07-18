@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.LoginOptionsActivity"
+    android:background="@color/white">
+
+    <!-- Tutup atau skip login activity  -->
+    <ImageButton
+        android:id="@+id/closeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/close"
+        android:background="@android:color/transparent"
+        android:padding="10dp"/>
+
+
+    <!-- Isi Content atau Fragment Button  -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="70dp">
+
+        <!-- Content or Fragments  -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Logo or Instruksi  -->
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/fulllogo" />
+
+            <!-- Button Login  -->
+            <com.google.android.material.button.MaterialButton
+            android:id="@+id/loginBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Masuk sebagai Admin"
+            android:layout_marginTop="30dp"
+            app:cornerRadius="12dp"
+            android:minHeight="@dimen/m_button_height"
+            android:backgroundTint="@color/red600"/>
+
+            <!-- Button Sign up  -->
+            <com.google.android.material.button.MaterialButton
+            android:id="@+id/signupBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Daftar sebagai Admin"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            app:cornerRadius="12dp"
+            android:minHeight="@dimen/m_button_height"
+            android:backgroundTint="@color/white700"/>
+
+
+                
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

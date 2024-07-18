@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.FasilitasDetailsActivity"
+    android:background="@color/white">
+
+    <!-- HEADER -->
+    <RelativeLayout
+        android:id="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/m_toolbar_height"
+        android:background="@color/white">
+        <!-- Back Button  -->
+        <ImageButton
+            android:id="@+id/toolBarBackBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back"
+            android:background="@android:color/transparent"
+            android:layout_centerVertical="true"
+            android:padding="10dp"/>
+        <!-- Page Title -->
+        <TextView
+            android:id="@+id/toolbarTitleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:text="Detail Fasilitas"
+            android:layout_centerInParent="true" />
+        <!-- Delete Image Button  -->
+        <ImageButton
+            android:id="@+id/toolbarDeleteBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/delete"
+            android:background="@android:color/transparent"
+            android:layout_toStartOf="@id/toolbarEditBtn"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:padding="10dp"/>
+        <!-- Edit Image Button  -->
+        <ImageButton
+            android:id="@+id/toolbarEditBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/edit"
+            android:background="@android:color/transparent"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:padding="10dp"/>
+
+    </RelativeLayout>
+
+    <!-- Gambar Fasilitas-->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/imageSliderVp"
+        android:layout_width="match_parent"
+        android:layout_height="231dp"
+        android:layout_below="@id/toolbarRl"/>
+
+    <!-- CONTENT or FRAGMENT SECTION -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/imageSliderVp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <!-- Tanggal Upload Fasilitas -->
+            <TextView
+                android:id="@+id/dateTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="dd/MM/yyyy"
+                android:layout_marginTop="10dp"
+                style="@style/TextAppearance.MaterialComponents.Overline"/>
+
+            <!-- Judul Fasilitas -->
+            <TextView
+                android:id="@+id/titleTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dateTv"
+                android:layout_marginTop="20dp"
+                android:text="Judul Fasilitas Umum"
+                style="@style/TextAppearance.MaterialComponents.Headline6"/>
+
+            <!-- Judul Kategori -->
+            <TextView
+                android:id="@+id/categoryLabelTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/titleTv"
+                android:text="Kategori Keramahan"
+                android:textStyle="bold"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_marginTop="20dp"/>
+            <!-- Kategori -->
+            <LinearLayout
+                android:id="@+id/category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:layout_below="@+id/categoryLabelTv">
+            <!-- Icon Kategori -->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/categoryIconIv"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:shapeAppearanceOverlay="@style/ImageStyle_Corners_Rounded"
+                android:src="@drawable/gambar"/>
+            <!-- Text Kategori -->
+            <TextView
+                android:id="@+id/categoryTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Category"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="5dp"/>
+            </LinearLayout>
+
+            <!-- Caption Fasilitas -->
+            <TextView
+                android:id="@+id/descriptionTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@tools:sample/lorem[50]"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/category"
+                style="@style/TextAppearance.MaterialComponents.Body2"/>
+
+            <!-- Uploader Title -->
+            <TextView
+                android:id="@+id/receiptProfileLabelTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pengunggah"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/descriptionTv"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:textStyle="bold"/>
+            <!-- Uploader Description -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/adminProfileCv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/receiptProfileLabelTv"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="12dp">
+                <!-- Content -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="10dp">
+                    <!-- Image Profile -->
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/adminProfileIv"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/profile"
+                        android:background="@color/white700"
+                        app:shapeAppearanceOverlay="@style/ImageStyle_Circle"/>
+                    <!-- Nama admin -->
+                    <TextView
+                        android:id="@+id/adminNameTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@tools:sample/full_names"
+                        android:layout_toEndOf="@id/adminProfileIv"
+                        android:layout_marginStart="20dp"
+                        style="@style/TextAppearance.MaterialComponents.Body2"/>
+                    <!-- Bergabung sejak -->
+                    <TextView
+                        android:id="@+id/memberSinceLabelTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/TextAppearance.MaterialComponents.Caption"
+                        android:text="Bergabung sejak"
+                        android:layout_below="@id/adminNameTv"
+                        android:layout_toEndOf="@id/adminProfileIv"
+                        android:layout_marginStart="20dp"/>
+                    <!-- tanggal bergabung -->
+                    <TextView
+                        android:id="@+id/memberSinceTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/TextAppearance.MaterialComponents.Caption"
+                        android:text="dd/MM/yyyy"
+                        android:layout_below="@id/adminNameTv"
+                        android:layout_toEndOf="@id/memberSinceLabelTv"
+                        android:layout_marginStart="5dp"/>
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <!-- OPTIONS -->
+    <LinearLayout
+        android:id="@+id/optionsLl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:padding="2dp">
+        <!-- Telfon -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/callBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Telfon"
+            app:cornerRadius="12dp"
+            android:minHeight="@dimen/m_button_height"
+            android:layout_marginHorizontal="3dp"
+            app:icon="@drawable/call"
+            android:backgroundTint="@color/black"/>
+        <!-- Whatsapp -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/waBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Whatsapp"
+            app:cornerRadius="12dp"
+            android:minHeight="@dimen/m_button_height"
+            android:layout_marginHorizontal="3dp"
+            app:icon="@drawable/whatsapp"
+            android:backgroundTint="@color/whatsapp"/>
+        <!-- SMS -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/smsBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="SMS"
+            app:cornerRadius="12dp"
+            android:minHeight="@dimen/m_button_height"
+            android:layout_marginHorizontal="3dp"
+            app:icon="@drawable/sms"
+            android:backgroundTint="@color/white800"/>
+    </LinearLayout>
+
+</RelativeLayout>

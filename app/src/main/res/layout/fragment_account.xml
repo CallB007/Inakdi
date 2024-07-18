@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.AccountFragment">
+
+    <!-- CONTENT or FRAGMENT SECTION -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="20dp"
+        android:padding="40dp"
+        android:background="@color/white">
+
+        <!-- FOTO PROFILE -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profileTv"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@color/white700"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profile"
+            app:shapeAppearanceOverlay="@style/ImageStyle_Circle"/>
+
+        <!-- TEXTFIELD NAMA -->
+        <TextView
+            android:id="@+id/nameLabelTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:layout_below="@id/profileTv"
+            android:layout_marginTop="40dp"
+            android:text="Nama"/>
+        <!-- Nama Lengkap Caption -->
+        <TextView
+            android:id="@+id/nameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:layout_marginTop="40dp"
+            android:text="Nama Lengkap"
+            android:layout_below="@id/profileTv"
+            android:layout_alignParentEnd="true"/>
+
+        <!-- TEXTFIELD EMAIL -->
+        <TextView
+            android:id="@+id/emailLabelTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:text="Email"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/nameLabelTv"/>
+        <!-- Email Caption -->
+        <TextView
+            android:id="@+id/emailTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:layout_marginTop="15dp"
+            android:text="namaemail@contoh.com"
+            android:layout_below="@id/nameLabelTv"
+            android:layout_alignParentEnd="true"/>
+
+        <!-- TEXTFIELD NOMOR TELEFON (NO. HP) -->
+        <TextView
+            android:id="@+id/numberLabelTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:text="Nomor Telefon"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/emailLabelTv"/>
+        <!-- Nomor Telefon Caption -->
+        <TextView
+            android:id="@+id/numberTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:layout_marginTop="15dp"
+            android:text="+62 361xxx"
+            android:layout_below="@id/emailLabelTv"
+            android:layout_alignParentEnd="true"/>
+
+        <!-- TEXTFIELD TANGGAL BERGABUNG -->
+        <TextView
+            android:id="@+id/memberSinceLabelTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:text="Bergabung sejak"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/numberLabelTv"/>
+        <!-- Email Caption -->
+        <TextView
+            android:id="@+id/memberSinceTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:layout_marginTop="15dp"
+            android:text="HH/BB/TTTT"
+            android:layout_below="@id/numberLabelTv"
+            android:layout_alignParentEnd="true"/>
+
+        <!-- STATUS AKUN -->
+        <TextView
+            android:id="@+id/verifLabelTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:text="Status Akun"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/memberSinceLabelTv"/>
+        <!-- Email Caption -->
+        <TextView
+            android:id="@+id/verifTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:layout_marginTop="15dp"
+            android:text="Belum Terverifikasi"
+            android:layout_below="@id/memberSinceLabelTv"
+            android:layout_alignParentEnd="true"/>
+
+
+        <!-- BUTTON SECTION -->
+        <LinearLayout
+            android:layout_below="@id/verifLabelTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical">
+
+            <!-- Button Verifikasi -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/verifyAccountCv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:minHeight="@dimen/m_button_height"
+                android:text="Verifikasi Akun"
+                app:cornerRadius="12dp"
+                android:backgroundTint="@color/white600"
+                android:textColor="@color/black"/>
+
+            <!-- Button Edit -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/editProfileCv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/verifyAccountCv"
+                android:layout_centerHorizontal="true"
+                android:minHeight="@dimen/m_button_height"
+                android:text="Ubah Data Akun"
+                app:cornerRadius="12dp"
+                android:backgroundTint="@color/white700"
+                android:textColor="@color/black"/>
+
+            <!-- Button Logout -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/logoutCv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/haveAccountTv"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:minHeight="@dimen/m_button_height"
+                android:text="Keluar Akun"
+                app:cornerRadius="12dp"
+                android:backgroundTint="@color/red600"/>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>

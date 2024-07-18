@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#0B090A</color>
+    <color name="black500">#161A1D</color>
+    <color name="red800">#660708</color>
+    <color name="red700">#A4161A</color>
+    <color name="red600">#BA181B</color>
+    <color name="red500">#E5383B</color>
+    <color name="grey700">#595959</color>
+    <color name="grey600">#848484</color>
+    <color name="white800">#B0B0B0</color>
+    <color name="white700">#D3D3D3</color>
+    <color name="white600">#F5F3F4</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="green600">#2BBF1F</color>
+    <color name="whatsapp">#25D366</color>
+    <color name="yellow600">#FFEB3B</color>
+</resources>
