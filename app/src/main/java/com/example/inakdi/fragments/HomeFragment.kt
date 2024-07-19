@@ -7,11 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.inakdi.databinding.FragmentHomeBinding
 import android.content.Context
+import android.content.Intent
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import com.example.inakdi.R
 import com.example.inakdi.RvListenerCategory
 import com.example.inakdi.Utils
+import com.example.inakdi.activities.TambahFasilitasActivity
 import com.example.inakdi.adapters.AdapterCategory
 import com.example.inakdi.adapters.AdapterFasilitas
 import com.example.inakdi.models.ModelCategory
@@ -69,7 +72,7 @@ class HomeFragment : Fragment() {
             override fun afterTextChanged(s: Editable?) {}
         })
 
-        binding.faqIcon.setOnClickListener{
+        binding.faqIcon.setOnClickListener {
 
         }
 

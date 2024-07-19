@@ -74,7 +74,7 @@
             android:layout_height="50dp"
             android:background="@color/black"
             app:shapeAppearanceOverlay="@style/ImageStyle_Corners_Rounded"
-            android:src="@drawable/faq"/>
+            android:src="@drawable/fabcategory"/>
         <!-- Text -->
         <TextView
             android:id="@+id/faqTv"
@@ -95,7 +95,7 @@
             android:gravity="center"
             android:layout_marginTop="10dp"
             android:layout_toEndOf="@id/faqIcon"
-            android:layout_marginStart="17dp">
+            android:layout_marginStart="16dp">
             <!-- Icon -->
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/allIconIv"
