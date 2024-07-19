@@ -7,14 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.inakdi.databinding.FragmentHomeBinding
 import android.content.Context
-import android.content.Intent
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import com.example.inakdi.R
 import com.example.inakdi.RvListenerCategory
 import com.example.inakdi.Utils
-import com.example.inakdi.activities.TambahFasilitasActivity
 import com.example.inakdi.adapters.AdapterCategory
 import com.example.inakdi.adapters.AdapterFasilitas
 import com.example.inakdi.models.ModelCategory
@@ -73,13 +73,23 @@ class HomeFragment : Fragment() {
         })
 
         binding.faqIcon.setOnClickListener {
-
+            showAlertDialog()
         }
 
         binding.allIcon.setOnClickListener {
             loadFasilitas("All")
         }
 
+    }
+
+    private fun showAlertDialog() {
+        val builder = AlertDialog.Builder(mContext)
+        val dialogView = layoutInflater.inflate(R.layout.faq_message, null)
+        builder.setView(dialogView)
+        builder.setCancelable(true) // Make the dialog cancellable
+
+        val dialog = builder.create()
+        dialog.show()
     }
 
     private fun loadFasilitas(category: String) {
