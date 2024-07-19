@@ -1,23 +1,29 @@
 package com.example.inakdi.adapters
 
 import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.inakdi.FilterBerita
 import com.example.inakdi.R
 import com.example.inakdi.Utils
+import com.example.inakdi.activities.BeritaDetailsActivity
 import com.example.inakdi.databinding.RowBeritaBinding
 import com.example.inakdi.models.ModelBerita
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
 class AdapterBerita(context: Context, beritaArrayList: ArrayList<ModelBerita>) :
-    RecyclerView.Adapter<AdapterBerita.HolderBerita>() {
+    RecyclerView.Adapter<AdapterBerita.HolderBerita>(), Filterable {
 
     private lateinit var binding: RowBeritaBinding
 
@@ -27,6 +33,13 @@ class AdapterBerita(context: Context, beritaArrayList: ArrayList<ModelBerita>) :
 
     private var context: Context = context
     var beritaArrayList: ArrayList<ModelBerita> = beritaArrayList
+
+    private var filterList: ArrayList<ModelBerita> = beritaArrayList
+
+    private var filter: FilterBerita? = null
+
+
+    private var firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HolderBerita {
         // Inflate the row_berita.xml
@@ -48,6 +61,13 @@ class AdapterBerita(context: Context, beritaArrayList: ArrayList<ModelBerita>) :
         holder.titleTv.text = title
         holder.descriptionTv.text = description
         holder.dateTv.text = formattedDate
+
+        holder.itemView.setOnClickListener {
+
+            val intent = Intent(context, BeritaDetailsActivity::class.java)
+            intent.putExtra("beritaId", modelBerita.id)
+            context.startActivity(intent)
+        }
     }
 
     private fun loadBeritaFirstImage(modelBerita: ModelBerita, holder: HolderBerita) {
@@ -83,6 +103,13 @@ class AdapterBerita(context: Context, beritaArrayList: ArrayList<ModelBerita>) :
 
     override fun getItemCount(): Int {
         return beritaArrayList.size
+    }
+
+    override fun getFilter(): Filter {
+        if (filter == null) {
+            filter = FilterBerita(this, filterList)
+        }
+        return filter as FilterBerita
     }
 
     inner class HolderBerita(itemView: View) : RecyclerView.ViewHolder(itemView) {

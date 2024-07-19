@@ -84,7 +84,7 @@
 
             <!-- Judul Fasilitas -->
             <TextView
-                android:id="@+id/titleLabelTv"
+                android:id="@+id/titleTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/dateTv"
@@ -99,7 +99,7 @@
                 android:layout_height="wrap_content"
                 android:text="@tools:sample/lorem[50]"
                 android:layout_marginTop="20dp"
-                android:layout_below="@id/titleLabelTv"
+                android:layout_below="@id/titleTv"
                 style="@style/TextAppearance.MaterialComponents.Body2"/>
 
             <!-- Uploader Title -->
@@ -192,7 +192,7 @@
             android:backgroundTint="@color/black"/>
         <!-- Whatsapp -->
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/whatsappBtn"
+            android:id="@+id/waBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -204,7 +204,7 @@
             android:backgroundTint="@color/whatsapp"/>
         <!-- SMS -->
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/messageBtn"
+            android:id="@+id/smsBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

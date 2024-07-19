@@ -355,7 +355,7 @@ class TambahFasilitasActivity : AppCompatActivity() {
 
             val imageName = modelImagePicked.id
 
-            val filePathAndName = "fasilitas_umum/$imageName"
+            val filePathAndName = "Fasilitas Umum/$imageName"
             val imageIndexForProgress = i + 1
 
             val storageReference = FirebaseStorage.getInstance().getReference(filePathAndName)

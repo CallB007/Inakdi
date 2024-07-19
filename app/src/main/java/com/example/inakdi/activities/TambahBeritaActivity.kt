@@ -235,7 +235,7 @@ class TambahBeritaActivity : AppCompatActivity() {
     }
 
     private var title = ""
-//    private var category = ""
+    //    private var category = ""
     private var description = ""
 
     private fun validateData(){
