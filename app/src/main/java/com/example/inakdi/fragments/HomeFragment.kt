@@ -69,9 +69,14 @@ class HomeFragment : Fragment() {
             override fun afterTextChanged(s: Editable?) {}
         })
 
-        binding.allCategories.setOnClickListener {
+        binding.faqIcon.setOnClickListener{
+
+        }
+
+        binding.allIcon.setOnClickListener {
             loadFasilitas("All")
         }
+
     }
 
     private fun loadFasilitas(category: String) {

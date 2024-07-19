@@ -30,6 +30,16 @@
     </com.google.android.material.card.MaterialCardView>
 
 
+    <!-- IMAGE SLIDER -->
+    <!-- Banner -->
+    <ImageView
+        android:id="@+id/homeBanner"
+        android:layout_width="wrap_content"
+        android:layout_height="160dp"
+        android:src="@drawable/homebg"
+        android:layout_marginTop="20dp"
+        style="@style/ImageStyle_Corners_Rounded"/>
+
     <!-- KATEGORI -->
     <!-- Judul Kategori -->
     <TextView
@@ -48,9 +58,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingHorizontal="25dp">
-    <!-- Kategori Semuanya -->
+
+    <!-- FAQ Kategori -->
     <LinearLayout
-        android:id="@+id/allIcon"
+        android:id="@+id/faqIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -58,22 +69,51 @@
         android:layout_marginTop="10dp">
         <!-- Icon -->
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/allIconIv"
+            android:id="@+id/faqIconIv"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@color/yellow600"
+            android:background="@color/black"
             app:shapeAppearanceOverlay="@style/ImageStyle_Corners_Rounded"
-            android:src="@drawable/allcategory"/>
+            android:src="@drawable/faq"/>
         <!-- Text -->
         <TextView
-            android:id="@+id/categoryTv"
+            android:id="@+id/faqTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Semuanya"
+            android:text="FAQ ?"
             android:textAlignment="center"
             android:textSize="10sp"
             android:layout_marginTop="5dp"/>
     </LinearLayout>
+
+        <!-- Kategori Semuanya -->
+        <LinearLayout
+            android:id="@+id/allIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/faqIcon"
+            android:layout_marginStart="17dp">
+            <!-- Icon -->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/allIconIv"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/yellow600"
+                app:shapeAppearanceOverlay="@style/ImageStyle_Corners_Rounded"
+                android:src="@drawable/allcategory"/>
+            <!-- Text -->
+            <TextView
+                android:id="@+id/categoryTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Semuanya"
+                android:textAlignment="center"
+                android:textSize="10sp"
+                android:layout_marginTop="5dp"/>
+        </LinearLayout>
 
     <!-- Kategori Pilihan -->
     <androidx.recyclerview.widget.RecyclerView
@@ -84,9 +124,11 @@
         android:orientation="horizontal"
         tools:listitem="@layout/row_category"
         android:layout_toEndOf="@id/allIcon"
-        android:layout_marginHorizontal="10dp"
+        android:layout_marginHorizontal="8dp"
         android:layout_marginTop="10dp"/>
     </RelativeLayout>
+
+
 
     <!-- Judul Fasilitas Umum -->
     <TextView
