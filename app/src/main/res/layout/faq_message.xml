@@ -2,15 +2,182 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="20dp"
     android:orientation="vertical"
     android:background="@color/white">
 
-    <TextView
-        android:id="@+id/message"
+
+    <!-- TOMBOL TUTUP -->
+    <ImageButton
+        android:id="@+id/closeBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:text="Pedoman menentukan tingkat keramahan Fasilitas Umum"
-        android:textStyle="bold"/>
+        android:src="@drawable/close"
+        android:background="@android:color/transparent"
+        android:layout_gravity="end"
+        app:tint="@color/red600"/>
+
+
+    <!-- JUDUL PEDOMAN -->
+    <TextView
+        android:id="@+id/titlePedomanTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pedoman menentukan tingkat Keramahan Fasilitas Umum"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+
+
+    <!-- DESKRIPSI PEDOMAN -->
+    <TextView
+        android:id="@+id/deskripsiPedomanTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="*Merujuk ke Pasal 27 ayat (2-3) UU Nomor 28 Tahun 2002 setiap bangunan harus mempunyai kemudahan, meliputi tersedianya fasilitas dan aksesibilitas yang mudah, aman, dan nyaman termasuk bagi penyandang cacat (disabilitas) ..."
+        style="@style/TextAppearance.MaterialComponents.Caption"/>
+
+
+    <!-- PEDOMAN (RAMAH) -->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iconRamah"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/green600"
+            android:src="@drawable/smile"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/iconRamah"
+            style="@style/TextAppearance.MaterialComponents.Body2"
+            android:text="Fasilitas Umum bisa dikategorikan level Ramah jika memiliki penyediaan berikut :"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+    <!-- Poin 1 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        style="@style/TextAppearance.MaterialComponents.Body2"
+        android:text="1.) Jalur khusus Disabilitas Fisik" />
+    <!-- Poin 2 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        style="@style/TextAppearance.MaterialComponents.Body2"
+        android:text="2.) Toilet khusus Disabilitas Fisik"/>
+    <!-- Poin 3 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        style="@style/TextAppearance.MaterialComponents.Body2"
+        android:text="3.) Tempat Parkir khusus Disabilitas Fisik"/>
+    <!-- Poin 4 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        style="@style/TextAppearance.MaterialComponents.Body2"
+        android:text="4.) Toilet khusus Disabilitas Fisik"/>
+    <!-- Poin 5 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        style="@style/TextAppearance.MaterialComponents.Body2"
+        android:text="5.) Fasilitas Informasi khusus Disabilitas Fisik"/>
+    <!-- Poin 6 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        style="@style/TextAppearance.MaterialComponents.Body2"
+        android:text="6.) Fasilitas lainya yang berguna atau dikhususkan bagi teman Disabilitas Fisik"/>
+
+
+    <!-- PEDOMAN (SEDANG) -->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iconSedang"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="7dp"
+            android:background="@color/white700"
+            android:src="@drawable/flat"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/iconSedang"
+            style="@style/TextAppearance.MaterialComponents.Body2"
+            android:text="Fasilitas Umum bisa dikategorikan level Sedang jika memiliki penyediaan berikut :"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+    <!-- Poin 1 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        style="@style/TextAppearance.MaterialComponents.Body2"
+        android:text="1.) Jalur khusus Disabilitas Fisik" />
+    <!-- Poin 2 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        style="@style/TextAppearance.MaterialComponents.Body2"
+        android:text="2.) Terdapat staff atau security yang dapat membantu"/>
+    <!-- Poin 3 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        style="@style/TextAppearance.MaterialComponents.Body2"
+        android:text="3.) Fasilitas lainya yang berguna atau dikhususkan bagi teman Disabilitas Fisik"/>
+
+
+    <!-- PEDOMAN (TIDAK RAMAH) -->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iconTidakRamah"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/red700"
+            android:src="@drawable/sad"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/iconTidakRamah"
+            style="@style/TextAppearance.MaterialComponents.Body2"
+            android:text="Fasilitas Umum bisa dikategorikan level Tidak Ramah jika :"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+    <!-- Poin 3 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        style="@style/TextAppearance.MaterialComponents.Body2"
+        android:text="1.) Fasilitas yang berguna atau dikhususkan bagi teman Disabilitas Fisik"/>
+
 </LinearLayout>

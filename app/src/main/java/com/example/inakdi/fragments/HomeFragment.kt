@@ -10,6 +10,7 @@ import android.content.Context
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import com.example.inakdi.R
@@ -90,7 +91,14 @@ class HomeFragment : Fragment() {
 
         val dialog = builder.create()
         dialog.show()
+
+        // Find the close button and set its click listener
+        val closeButton = dialogView.findViewById<ImageButton>(R.id.closeBtn)
+        closeButton.setOnClickListener {
+            dialog.dismiss() // Dismiss the dialog when the close button is clicked
+        }
     }
+
 
     private fun loadFasilitas(category: String) {
         Log.d(TAG, "loadFasilitas: category: $category")
