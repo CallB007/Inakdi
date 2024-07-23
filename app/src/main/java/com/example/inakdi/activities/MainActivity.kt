@@ -8,7 +8,6 @@ import com.example.inakdi.Utils
 import com.example.inakdi.databinding.ActivityMainBinding
 import com.example.inakdi.fragments.AccountFragment
 import com.example.inakdi.fragments.BeritaFragment
-import com.example.inakdi.fragments.FaqFragment
 import com.example.inakdi.fragments.HomeFragment
 import com.google.firebase.auth.FirebaseAuth
 
@@ -93,17 +92,6 @@ class MainActivity : AppCompatActivity() {
                 true
             }
         }
-    }
-
-    //FAQ FRAGMENT
-    private fun showFaqFragment(){
-        binding.toolbarTitleTv.text = "Bantuan"
-
-        //Show Fragment
-        val fragment = FaqFragment()
-        val fragmentTransaction = supportFragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.fragmentsFl, fragment, "FaqFragment")
-        fragmentTransaction.commit()
     }
 
     //HOME FRAGMENT

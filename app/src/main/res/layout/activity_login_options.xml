@@ -36,7 +36,7 @@
                 android:layout_width="300dp"
                 android:layout_height="300dp"
                 android:layout_gravity="center_horizontal"
-                android:src="@drawable/fulllogo" />
+                android:src="@drawable/fulllogoadmin" />
 
             <!-- Button Login  -->
             <com.google.android.material.button.MaterialButton
